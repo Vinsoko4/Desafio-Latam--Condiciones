@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <img
+      onclick="modifyBorder()"
+      class="cat border"
+      id="gatito"
+      src="https://ca-times.brightspotcdn.com/dims4/default/0ca19fa/2147483647/strip/true/crop/2048x1108+0+0/resize/1200x649!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F12%2Fa5%2F79e097ccf62312d18a025f22ce48%2Fhoyla-recuento-11-cosas-aman-gatos-top-001"
+    />
+    <script>
+      function modifyBorder() {
+        const cat = document.getElementById("gatito");
+        const checkBorder = cat.classList.contains("border");
+        if (checkBorder == true) {
+          cat.classList.remove("border");
+        } else {
+          cat.classList.add("border");
+        }
+      }
+    </script>
+    <br />
+    <img
+      class="sticker"
+      src="https://cdn.download.ams.birds.cornell.edu/api/v1/asset/115362451/1800"
+    />
+    <img
+      class="sticker"
+      src="https://4.bp.blogspot.com/-Nc2kUy71jfw/Vug9aXxgXuI/AAAAAAAAC9A/-MtneDfIRHIF3ipN0E69rjcVaVMYivATQ/s640/dd6975c66d7d-chucao_bparra.jpg"
+    />
+    <img
+      class="sticker"
+      src="https://fundacionmaradentro.cl/wp-content/uploads/2019/08/chucao-turismoenchile-cl-jpg-2.jpg"
+    />
+    <br />
+    <input id="Sticker1" type="number" value="0" />
+    <input id="Sticker2" type="number" value="0" />
+    <input id="Sticker3" type="number" value="0" />
+    <p id="responseP">Elige tus sticker</p>
+    <button onclick="checkStickers()">verificar</button>
+    <script>
+      function checkStickers() {
+        const failResponse =
+          "Son muchos, puedes llevar solo 10, estas llevando ";
+        const firstStickerCounter = document.getElementById("Sticker1");
+        const secondStickerCounter = document.getElementById("Sticker2");
+        const thirdStickerCounter = document.getElementById("Sticker3");
+        const myParagraph = document.getElementById("responseP");
+        const sum =
+          parseInt(firstStickerCounter.value) +
+          parseInt(secondStickerCounter.value) +
+          parseInt(thirdStickerCounter.value);
+        if (sum > 10) {
+          myParagraph.innerText = failResponse + sum;
+        } else {
+          const okResponse = "Genial llevate tus " + sum + " stickers";
+          myParagraph.innerText = okResponse;
+        }
+      }
+    </script>
+    <br /><br />
+    <br /><br />
+    <br /><br />
+
+    <select id="DigitA" selected="0">
+      <option>0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+    </select>
+    <select id="DigitB" selected="0">
+      <option>0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+    </select>
+    <select id="DigitC" selected="0">
+      <option>0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+    </select>
+    <p id="responsePass">Valida Tu Password</p>
+    <button onclick="checkPass()">Validar Password</button>
+    <script>
+      function checkPass() {
+        const firstDigit = document.getElementById("DigitA").value;
+        const secondDigit = document.getElementById("DigitB").value;
+        const thirdDigit = document.getElementById("DigitC").value;
+        const firstValidPass = "911";
+        const secondValidPass = "714";
+        const p = document.getElementById("responsePass");
+        const sum = firstDigit + secondDigit + thirdDigit;
+        if (sum == firstValidPass) {
+          p.innerText = "password 1 correcta";
+        } else if (sum == secondValidPass) {
+          p.innerText = "password 2 correcta";
+        } else {
+          p.innerText = "passwod incorrecta";
+        }
+      }
+    </script>
+  </body>
+</html>
